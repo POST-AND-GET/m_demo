@@ -1,0 +1,4 @@
+body{width: 100%;height: auto}
+.show{width: 100%;overflow: hidden;position: relative;}
+#wrap{width: 100%;position: absolute;top: 0;}
+.page{width: 100%;background: #94f3cd;}
