@@ -69,11 +69,6 @@
             wrap.style.transition = "top 2s ease 0";
             isTop = false;
         }
-       /* if (isDown) {
-            wrap.style.top = -i * sHeight + "px";
-            wrap.style.transition = "top 2s ease 0";
-            isDown = false;
-        }*/
 
     }
 })()
