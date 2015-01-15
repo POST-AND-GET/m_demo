@@ -33,12 +33,13 @@
             var touch = event.targetTouches[0];
             var Y = touch.pageY;
             D = startY - Y;
-
+            if(D < 100 && D > 0){}
+            if(D > -100 && D < 0){}
         }, false);
         document.getElementById("page-" + i).addEventListener('touchend', function (e) {
             e.preventDefault();
-            if(D < 150 && D > 0){}
-            if(D >= 150){
+
+            if(D >= 100){
                 //alert(D);
                 isDown = true;
                 if (index >= page.length - 1) {
@@ -46,10 +47,10 @@
                     index--;
                 }
                 index++;
-                moveV(index);
+                moveVertical(index);
             }
-            if(D > -150 && D < 0){}
-            if(D <= -150){
+
+            if(D <= -100){
                 //alert(D);
                 isTop = true;
                 if (index <=0) {
@@ -57,19 +58,17 @@
                     index++;
                 }
                 index--;
-                moveV(index);
+                moveVertical(index);
             }
 
         }, false);
     }
-
-    function moveV(i) {
+    function moveVertical(i) {
         if (isTop || isDown) {
             wrap.style.top =-i * sHeight + "px";
-            wrap.style.transition = "top 2s ease 0";
+            wrap.style.transition = "top 1s cubic-bezier(1,1,1,1) 0";
             isTop = false;
         }
-
     }
 })()
 
