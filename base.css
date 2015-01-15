@@ -8,7 +8,6 @@ body {
     overflow: hidden;
     position: relative;
 }
-
 #wrap {
     width: 100%;
     position: absolute;
@@ -18,4 +17,7 @@ body {
 .page {
     width: 100%;
     background: #94f3cd;
+}
+.page:nth-child(odd){
+    background: #87131b;
 }
