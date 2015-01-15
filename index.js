@@ -64,7 +64,6 @@
     }
 
     function moveV(i) {
-        //if(direction == 2){i = -i}
         if (isTop || isDown) {
             wrap.style.top =-i * sHeight + "px";
             wrap.style.transition = "top 2s ease 0";
