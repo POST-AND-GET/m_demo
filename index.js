@@ -29,7 +29,6 @@
             startY = touch.pageY;
         }, false);
         document.getElementById("page-" + i).addEventListener('touchmove', function (e) {
-            e.preventDefault();
             var touch = event.targetTouches[0];
             var Y = touch.pageY;
             D = startY - Y;
@@ -37,7 +36,6 @@
             if(D > -100 && D < 0){}
         }, false);
         document.getElementById("page-" + i).addEventListener('touchend', function (e) {
-            e.preventDefault();
             if(D >= 100){
                 //alert(D);
                 isDown = true;
@@ -63,23 +61,15 @@
     function moveVertical(i) {
         if (isTop || isDown) {
             wrap.style.top =-i * sHeight + "px";
+            wrap.style.webkitTransition = "top 1s cubic-bezier(1,1,1,1) 0";
             wrap.style.transition = "top 1s cubic-bezier(1,1,1,1) 0";
             isTop = false;
         }
     }
     eventInit();//恢复元素的默认事件
     function eventInit(){
-        document.getElementById("asd").addEventListener('touchstart', function (e) {
-            e.stopPropagation();
-
-        }, false);
         document.getElementById("asd").addEventListener('touchmove', function (e) {
             e.stopPropagation();
-
-        }, false);
-        document.getElementById("asd").addEventListener('touchend', function (e) {
-            e.stopPropagation();
-
         }, false);
     }
 })()
