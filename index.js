@@ -24,11 +24,11 @@
     for (var i = 0; i < page.length; i++) {
 
         document.getElementById("page-" + i).addEventListener('touchstart', function (e) {
-            e.preventDefault();
             var touch = event.targetTouches[0];
             startY = touch.pageY;
         }, false);
         document.getElementById("page-" + i).addEventListener('touchmove', function (e) {
+            e.preventDefault();
             var touch = event.targetTouches[0];
             var Y = touch.pageY;
             D = startY - Y;
